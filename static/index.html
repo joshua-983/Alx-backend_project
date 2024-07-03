@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh Foods</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+</head>
+
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <!-- Navigation links with onclick handlers to show different pages -->
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#menu" onclick="showPage('menu')">Menu</a></li>
+                <li><a href="#cart" onclick="showPage('cart')">Cart</a></li>
+                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#signup" onclick="showPage('signup')">Sign Up</a></li>
+                <li><a href="#login" onclick="showPage('login')">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home">
+            <h1>Welcome to Our Food Delivery Service</h1>
+            <p>Delicious food delivered to your doorstep.</p>
+            <a href="#menu" class="button" onclick="showPage('menu')">Order Now</a>
+        </div>
+
+        <!-- Menu Page -->
+        <div id="menu" style="display: none;">
+            <h1>Our Menu</h1>
+            <!-- Menu item: Pizza -->
+            <div class="menu-item">
+                <h2>Pizza</h2>
+                <img src="C:\Users\user\Desktop\myproject\foodimg.index\pizza 2.jpeg" alt="Pizza" width="200"
+                    height="150">
+                <p>$12.99</p>
+                <button onclick="addToCart('Pizza', 12.99)">Add to Cart</button>
+            </div>
+            <!-- Menu item: Burger -->
+            <div class="menu-item">
+                <h2>Burger</h2>
+                <img src="C:\Users\user\Desktop\myproject\foodimg.index\burger 1.jpeg" alt="Burger" width="200"
+                    height="150">
+                <p>$8.99</p>
+                <button onclick="addToCart('Burger', 8.99)">Add to Cart</button>
+            </div>
+            <!-- Add more menu items as needed -->
+            <div class="menu-item">
+                <h2>Fried Rice</h2>
+                <img src="C:\Users\user\Desktop\myproject\foodimg.index\fried rice.webp" alt="Fried Rice" width="200"
+                    height="150">
+                <p>$9.50</p>
+                <button onclick="addToCart('Fried Rice', 9.50)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <h2>Jollof Rice</h2>
+                <img src="C:\Users\user\Desktop\myproject\foodimg.index\Jollof-Rice-With-Chicken.jpg" alt="Jollof Rice"
+                    width="200" height="150">
+                <p>$10.80</p>
+                <button onclick="addToCart('Jollof Rice', 10.80)">Add to Cart</button>
+            </div>
+            <!-- Search functionality -->
+            <div>
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" placeholder="Search menu items...">
+                <button onclick="searchMenu()">Search</button>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cart" style="display: none;">
+            <h1>Your Cart</h1>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <button onclick="showPage('payment')">Proceed to Payment</button>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" style="display: none;">
+            <h1>Contact Us</h1>
+            <!-- Contact form -->
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Sign Up Page -->
+        <div id="signup" style="display: none;">
+            <h1>Sign Up</h1>
+            <!-- Sign up form -->
+            <form id="signup-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login" style="display: none;">
+            <h1>Login</h1>
+            <!-- Login form -->
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Payment Page -->
+        <div id="payment" style="display: none;">
+            <h1>Payment</h1>
+            <p>Payment functionality will be added here.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Delivery Service</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+
+</html>
